@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- About section-->
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8" style="height: 220px;">
+                        <h2>About this page</h2>
+                        <p class="lead" >
+                        Benjamin Franklin Said : "If You Fail to Plan, You Are Planning to Fail".
+                        What he meant was that basically success doesn't happen by accident.It takes planning, knowing where you are heading and how
+                        you will get there. If you fail to do this you may stumble upon a win here or there, but the ultimate success won't be in that stumble.
+                        <br>This page gives you the order in which you should complete your tasks to minimise delays (Objective1), or penalties (Objective2), either you use
+                        Dynamic Programming, Metaheuristic, or Hangdson & Moore algorithm(this one is only for the first objective).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Objective1 section-->
+        <section class="bg-light" id="services">
+                <div class="row gx-4 justify-content-top">
+                    <div class="col-lg-8" style="float: left;font-size:large; width: 30%;height: 500px;background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80'); background-size: cover; text-align: center;color:rgb(75, 73, 73)">
+                        <h2 style="color: cadetblue;">Objective1</h2><br><br><br>
+                        <p> Here we will give you the optimal sequence also the delay</p>
+                        <p> The file that you should use must contains 3 lignes</p>
+                        <ul style="text-align: justify;">
+                            <li>First Line : Number of tasks</li>
+                            <li>Second Line: The processing time for each task, separated by tabs</li>
+                            <li>Last One : The deadline for each task, separated by tabs</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8" style="float: right;width: 70%;height: 500px;background-color: rgb(226, 226, 235);">
+                        
+                        <form action="/result" method="POST" enctype="multipart/form-data" class="md-form"  style="text-align: center;">                                
+                            <div class="custom-file mb-3">
+                                <br><br><br><br><br>
+                                <p class="lead" style="color: dark; font-weight: bold">Choose a file </p>
+                                <input type="file" name="f" class="custom-file-input" >
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                <br><br>
+                                <p class="lead" style="color: black; font-weight: bold">Choose the method </p><br>
+                                <button type="submit" class="btn btn-dark btn-lg" name="toDO" value="Dynamic">Dynamic</button>
+                                <button type="submit" class="btn btn-warning btn-lg" name="toDO" value="MetaHeur">MetaHeur</button>
+                                <button type="submit" class="btn btn-info btn-lg" name="toDO" value="Polynomial">Polynomial</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Objective2 section-->
+        <section id="contact" >
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8" style="float: left; width: 30%;height: 500px;background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80'); background-size: cover; text-align: center;color:rgb(75, 73, 73)">
+                    <h2 style="color:cadetblue">Objective2</h2><br><br>
+                    <p> Here we will give you the optimal sequence also the penalty</p>
+                        <p> The file that you should use must contains 3 lignes</p>
+                        <ul style="text-align: justify;">
+                            <p>First Line : Number of tasks</p>
+                            <p>Second Line: Processing time for each task, separated by tabs</p>
+                            <p>Third Line : Deadline for each task, separated by tabs</p>
+                            <p>Fourth Line: Penalty to paid in case of production before time</p>
+                            <p>Last Line: Penalty to paid in case of production after time</p>
+                        </ul>
+                </div>
+                <div class="col-lg-8" style="float: right;width: 70%;height: 500px;background-color: rgb(226, 226, 235);">
+                    
+                    <form action="/result" method="POST" enctype="multipart/form-data" class="md-form"  style="text-align: center;">                                
+                        <div class="custom-file mb-3">
+                            <br><br><br><br><br>
+                            <p class="lead" style="color: dark; font-weight: bold">Choose a file </p>
+                            <input type="file" name="f" class="custom-file-input" >
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                            <br><br>
+                            <p class="lead" style="color: black; font-weight: bold">Choose the method </p><br>
+                            <button type="submit" class="btn btn-dark btn-lg" name="toDO" value="Dynamic">Dynamic</button>
+                            <button type="submit" class="btn btn-warning btn-lg" name="toDO" value="MetaHeur">MetaHeur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+ {% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    a {
+        outline: none;
+        text-decoration: none;
+        display: inline-block;
+        width: 6.5%;
+        text-align: center;
+        line-height: 3;
+        color: black;
+     }
+    a:link, a:visited, a:focus {
+         background: gray;
+    }
+
+    a:hover {
+         background: pink;
+    }
+
+    a:active {
+    background: darkgray;
+    color: white;
+    }
+</style>
+</head>
+<body style="background-image: url('https://images.unsplash.com/photo-1573126617899-41f1dffb196c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');background-repeat: no-repeat; background-size: cover;">
+    <div style="text-align: center;">
+    <p style="color: black;font-size: large;">Moore & Hangdson</p>
+    <p style="color: black;font-size: large;">Delay: {{dD[0]}} </p>
+    <p style="color: black;font-size: large;">Here is the sequence to follow : </p>
+    {% for i in dD[1] %}
+    <a href="#" style="color: black;font-size: large;" > {{ i   }}</a>
+    {% endfor %}
+    {% for i in dD[-1] %}
+    <a href="#" style="color: black;font-size: large; " > {{ i   }}</a>
+    {% endfor %}
+    <p style="color: white;font-size: large;">Read horizontally from left to right </p>
+    </div>
+</body>
+</html>
